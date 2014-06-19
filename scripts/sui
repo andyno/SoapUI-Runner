@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python $SOAPUI_RUNNER/soapui_runner.py "$@"

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="UD" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="REST Project 1">D:/Users/astrate/soapui/workspace/ud/project/REST-Project-1-soapui-project.xml</con:project>
+</con:soapui-workspace>

@@ -1,0 +1,19 @@
+# Sample test case
+
+[Suite 1]
+workspace: workspace/ud
+project: workspace/ud/project/REST-Project-1-soapui-project.xml
+suite: TS TestSuite
+
+[Suite 2]
+workspace: workspace/ud
+project: workspace/ud/project/REST-Project-1-soapui-project.xml
+suite: TS TestSuite
+
+[Suite 3]
+workspace: workspace/ud
+project: workspace/ud/project/REST-Project-1-soapui-project.xml
+suite: TS TestSuite
+
+[Half Suite]
+suites: Suite 1,Suite 2

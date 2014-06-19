@@ -23,6 +23,13 @@ sui "Suite 1"
 ```
 in /demo containing testcases.sui to run that suite as defined in the testcases.sui file.
 
+Or:
+```
+sui "Suite 1" "Half Suite" ...
+```
+to run multiple suites.
+
+
 Run:
 ```
 sui --all

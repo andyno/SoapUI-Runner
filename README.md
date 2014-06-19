@@ -11,7 +11,7 @@ Installation
 3. Add environment variable SOAPUI_RUNNER pointing to repo directory (i.e. /Users/john/soapui)
 4. Add scripts folder to path ($SOAPUI_RUNNER/scripts)
 5. Run CHMOD +x sui to be able to run from command line
-6. Run sui in terminal to verify
+6. Run sui -h in terminal to verify
 
 Usage
 -----

@@ -24,7 +24,7 @@ def run_suite(suite):
                 '-cp', CLASSPATH, 'com.eviware.soapui.tools.SoapUITestCaseRunner']
     # DEFINE SOAP UI PART OF CMD
     SOAP_UI_CMD = [suite['project'], '-s'+suite['suite'],'-r', '-a',
-                   '-f'+suite['workspace'] + '/output/' + suite['suite'],
+                   '-f'+suite['workspace'] + '/output/' + suite['name'],
                    '-GworkspaceDir'+suite['workspace']]
     # CALL PROCESS
     subprocess.call(JAVA_CMD + SOAP_UI_CMD)
@@ -39,12 +39,14 @@ def read_sui():
 def get_case(name, sui):
     try:
         case = {
+            'name': name,
             'suite': sui.get(name, 'suite'),
             'project': sui.get(name, 'project'),
             'workspace': sui.get(name, 'workspace')
         }
     except ConfigParser.NoOptionError:
         case = {
+            'name': name,
             'suites': sui.get(name, 'suites').split(',')
         }
     return case
@@ -56,7 +58,9 @@ def read_suites(arg_suites, include_sets, sui):
         suite = get_case(arg_suite, sui)
         if suite.has_key('suites') and include_sets:
             for _suite in suite['suites']:
-                suites.append(get_case(_suite, sui))
+                case = get_case(_suite, sui)
+                case['name'] = suite['name']
+                suites.append(case)
         elif not suite.has_key('suites'):
             suites.append(get_case(arg_suite, sui))
     return suites
